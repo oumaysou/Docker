@@ -1,0 +1,8 @@
+## Setup docker-for-mac 42:
+# rm -rf ~/Library/Containers/com.docker.docker
+# mkdir /goinfre/dodo
+# export MACHINE_STORAGE_PATH=/goinfre/dodo
+# ln -s /goinfre/dodo ~/Library/Containers/com.docker.docker
+# rajouter :x
+# --virtualbox-memory 5000
+Docker-machine create --driver virtualbox Char

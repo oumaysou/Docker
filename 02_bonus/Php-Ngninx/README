@@ -1,0 +1,9 @@
+# Ces Dockerfiles consistent a creer un manager et un worker;
+ ## Le manager qui contient le serveur nginx va appeler un zorker pour mettre a jour la page html..
+
+docker build -t serveur-web -f serveurweb/Dockerfile . 
+docker build -t worker1 -f worker1/Dockerfile .
+docker build -t worker2 -f worker2/Dockerfile .
+docker run -tid --name my-site -p 8181:80 serveur-web
+docker run -tid --name worker1 --volumes-from my-site worker1
+docker run -tid --name worker2 -volumes-from my-site worker2

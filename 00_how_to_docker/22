@@ -1,0 +1,6 @@
+docker-machine ssh Aiur docker swarm join --token \
+	$(docker swarm join-token -q worker) \
+	$(docker inspect Char --format '{{ .ManagerStatus.Addr }}')
+
+#Pour quitter le swarm
+#docker swarm leave --force
